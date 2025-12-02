@@ -1,0 +1,28 @@
+using UnityEngine;
+
+public class CameraFollow : MonoBehaviour
+{
+    public Transform player;
+
+    [Range(-100f, 100f)] 
+    public float minHeightY = -35f; 
+
+    public float zOffset = -10f;
+
+    void LateUpdate()
+    {
+        if (player != null)
+        {
+            Vector3 targetPos = player.position;
+
+            if (targetPos.y < minHeightY)
+            {
+                targetPos.y = minHeightY;
+            }
+
+            targetPos.z = zOffset;
+
+            transform.position = targetPos;
+        }
+    }
+}
