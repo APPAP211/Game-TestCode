@@ -83,4 +83,5 @@ public class PlayerDoubleJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
             isGrounded = false;
     }
+
 }
